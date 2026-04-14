@@ -8,5 +8,6 @@ public enum OAuthProvider {
     GOOGLE,
     KAKAO,
     NAVER,
-    SSAFY
+    SSAFY,
+    GITHUB
 }
