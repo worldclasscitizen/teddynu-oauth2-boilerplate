@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth2 로그인</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 48px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 440px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+
+        .oauth-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 24px;
+            margin-bottom: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .oauth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .oauth-btn:active {
+            transform: translateY(0);
+        }
+
+        .oauth-btn:last-child { margin-bottom: 0; }
+
+        .btn-google {
+            background: #4285F4;
+            color: #ffffff;
+        }
+
+        .btn-kakao {
+            background: #FEE500;
+            color: #191919;
+        }
+
+        .btn-naver {
+            background: #03C75A;
+            color: #ffffff;
+        }
+
+        .btn-ssafy {
+            background: #3396F4;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>OAuth2 Boilerplate</h1>
+        <p class="subtitle">소셜 계정으로 간편하게 로그인하세요</p>
+
+        <a href="/api/auth/login/google" class="oauth-btn btn-google">Google 계정으로 로그인</a>
+        <a href="/api/auth/login/kakao" class="oauth-btn btn-kakao">Kakao 계정으로 로그인</a>
+        <a href="/api/auth/login/naver" class="oauth-btn btn-naver">Naver 계정으로 로그인</a>
+        <a href="/api/auth/login/ssafy" class="oauth-btn btn-ssafy">SSAFY 계정으로 로그인</a>
+    </div>
+</body>
+</html>

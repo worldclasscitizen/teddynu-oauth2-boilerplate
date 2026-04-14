@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            background: #ffffff;
+            padding: 48px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .welcome-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .info-item {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 14px;
+            padding: 14px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #555;
+        }
+
+        .success-msg {
+            font-size: 22px;
+            color: #03C75A;
+            font-weight: 700;
+            margin: 28px 0;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            padding: 14px 56px;
+            background: #ff4757;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background: #ee3b4b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.3);
+        }
+
+        .logout-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="welcome-icon">&#10004;</div>
+
+        <div class="info-item">
+            <span class="info-label">로그인 출처 : </span>
+            <span th:text="${provider}">GOOGLE</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">이메일 : </span>
+            <span th:text="${email}">user@example.com</span>
+        </div>
+
+        <p class="success-msg">로그인 되었습니다.</p>
+
+        <form action="/api/auth/logout" method="post">
+            <button type="submit" class="logout-btn">로그아웃</button>
+        </form>
+    </div>
+</body>
+</html>
